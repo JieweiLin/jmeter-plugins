@@ -162,6 +162,47 @@
         "libs": {
           "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.5/jmeter-plugins-cmn-jmeter-0.5.jar"
         }
+      },
+      "1.3.3": {
+        "changes": "Sampler now supports Header/Cookie/Auth Manager, reports response headers, and handles binary attachments.",
+        "downloadUrl": "https://github.com/spinning10/JMeterSoapSampler/raw/master/target/CustomSoapSampler-1.3.3.jar",
+        "depends": [
+          "jmeter-http"
+        ],
+        "libs": {
+          "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.5/jmeter-plugins-cmn-jmeter-0.5.jar"
+        }
+      }
+    }
+  },
+  {
+    "id": "tilln-iso8583",
+    "name": "ISO-8583 Sampler",
+    "description": "Generate ISO-8583 financial transactions for testing of payment gateways and switches<br />With support for cryptogram calculation (PIN Block, MAC, ARQC)<br />Based on the <a href=\"http://jpos.org\">jPOS</a> framework",
+    "screenshotUrl": "https://raw.githubusercontent.com/tilln/jmeter-iso8583/master/docs/sampler.png",
+    "helpUrl": "https://github.com/tilln/jmeter-iso8583",
+    "vendor": "Till Neunast",
+    "markerClass": "nz.co.breakpoint.jmeter.iso8583.ISO8583Sampler",
+    "componentClasses": [
+      "nz.co.breakpoint.jmeter.iso8583.ISO8583Config",
+      "nz.co.breakpoint.jmeter.iso8583.ISO8583Sampler",
+      "nz.co.breakpoint.jmeter.iso8583.ISO8583Component",
+      "nz.co.breakpoint.jmeter.iso8583.ISO8583Crypto"
+    ],
+    "versions": {
+      "1.0": {
+        "downloadUrl": "https://github.com/tilln/jmeter-iso8583/releases/download/1.0/jmeter-iso8583-1.0.jar",
+        "libs": {
+          "jpos": "https://search.maven.org/remotecontent?filepath=org/jpos/jpos/2.1.3/jpos-2.1.3.jar",
+          "bcprov-jdk15on": "https://search.maven.org/remotecontent?filepath=org/bouncycastle/bcprov-jdk15on/1.62/bcprov-jdk15on-1.62.jar",
+          "bcpg-jdk15on": "https://search.maven.org/remotecontent?filepath=org/bouncycastle/bcpg-jdk15on/1.62/bcpg-jdk15on-1.62.jar",
+          "jdom2": "https://search.maven.org/remotecontent?filepath=org/jdom/jdom2/2.0.6/jdom2-2.0.6.jar",
+          "org.osgi.core": "https://search.maven.org/remotecontent?filepath=org/osgi/org.osgi.core/6.0.0/org.osgi.core-6.0.0.jar",
+          "commons-cli": "https://search.maven.org/remotecontent?filepath=commons-cli/commons-cli/1.4/commons-cli-1.4.jar",
+          "snakeyaml": "https://search.maven.org/remotecontent?filepath=org/yaml/snakeyaml/1.24/snakeyaml-1.24.jar",
+          "HdrHistogram": "https://search.maven.org/remotecontent?filepath=org/hdrhistogram/HdrHistogram/2.1.11/HdrHistogram-2.1.11.jar",
+          "javatuples": "https://search.maven.org/remotecontent?filepath=org/javatuples/javatuples/1.2/javatuples-1.2.jar"
+        }
       }
     }
   },
@@ -184,13 +225,29 @@
           "jmeter-plugins-cmn-jmeter>=0.5": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.5/jmeter-plugins-cmn-jmeter-0.5.jar",
           "jsch": "https://search.maven.org/remotecontent?filepath=com/jcraft/jsch/0.1.54/jsch-0.1.54.jar"
         }
+      },
+      "1.1": {
+        "changes": "Bug fixes",
+        "downloadUrl": "https://github.com/tilln/jmeter-sshmon/releases/download/1.1/jmeter-sshmon-1.1.jar",
+        "libs": {
+          "jmeter-plugins-cmn-jmeter>=0.6": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.6/jmeter-plugins-cmn-jmeter-0.6.jar",
+          "jsch": "https://search.maven.org/remotecontent?filepath=com/jcraft/jsch/0.1.54/jsch-0.1.54.jar"
+        }
+      },
+      "1.2": {
+        "changes": "Bug fixes and new locale config option.",
+        "downloadUrl": "https://github.com/tilln/jmeter-sshmon/releases/download/1.2/jmeter-sshmon-1.2.jar",
+        "libs": {
+          "jmeter-plugins-cmn-jmeter>=0.6": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.6/jmeter-plugins-cmn-jmeter-0.6.jar",
+          "jsch": "https://search.maven.org/remotecontent?filepath=com/jcraft/jsch/0.1.54/jsch-0.1.54.jar"
+        }
       }
     }
   },
   {
     "id": "tilln-wssecurity",
     "name": "WS Security for SOAP",
-    "description": "Digital signature, encryption, decryption and username token for SOAP messages via Pre/Post-Processors that modify sampler payloads/responses.",
+    "description": "Digital signature, encryption, decryption, timestamp and username token for SOAP messages via Pre/Post-Processors that modify sampler payloads/responses.",
     "screenshotUrl": "https://raw.githubusercontent.com/tilln/jmeter-wssecurity/master/docs/signature.png",
     "helpUrl": "https://github.com/tilln/jmeter-wssecurity",
     "vendor": "Till Neunast",
@@ -260,6 +317,30 @@
           "wss4j-ws-security-dom": "http://central.maven.org/maven2/org/apache/wss4j/wss4j-ws-security-dom/2.1.8/wss4j-ws-security-dom-2.1.8.jar",
           "wss4j-ws-security-common": "http://central.maven.org/maven2/org/apache/wss4j/wss4j-ws-security-common/2.1.8/wss4j-ws-security-common-2.1.8.jar",
           "xmlsec": "http://central.maven.org/maven2/org/apache/santuario/xmlsec/2.0.8/xmlsec-2.0.8.jar"
+        }
+      },
+      "1.6": {
+        "changes": "<ul><li>Support for signing/encrypting/decrypting attachments</li><li>Upgrade to wss4j v2.2</li><li>Support for TCP Sampler, SMTP Sampler</li><li>New options:</li><ul><li>Header: Actor, mustUnderstand</li><li>Parts to Sign/Encrypt: ID</li></ul><li>Removed options:</li><ul><li>Signature algorithm http://www.w3.org/2001/04/xmldsig-more#rsa-ripemd160</li><li>Digest algorithm http://www.w3.org/2001/04/xmlenc#ripemd160</li><li>Key encryption algorithm http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p</li></ul></ul>",
+        "downloadUrl": "https://github.com/tilln/jmeter-wssecurity/releases/download/1.6/jmeter-wssecurity-1.6.jar",
+        "depends": [
+          "jmeter-core"
+        ],
+        "libs": {
+          "wss4j-ws-security-dom>=2.2": "https://search.maven.org/remotecontent?filepath=org/apache/wss4j/wss4j-ws-security-dom/2.2.2/wss4j-ws-security-dom-2.2.2.jar",
+          "wss4j-ws-security-common>=2.2": "https://search.maven.org/remotecontent?filepath=org/apache/wss4j/wss4j-ws-security-common/2.2.2/wss4j-ws-security-common-2.2.2.jar",
+          "xmlsec>=2.1": "https://search.maven.org/remotecontent?filepath=org/apache/santuario/xmlsec/2.1.2/xmlsec-2.1.2.jar"
+        }
+      },
+      "1.7": {
+        "changes": "<ul><li>SOAP Message Signer: Support for symmetric signature (HMAC)</li><li>SOAP Message Decrypter: Support for multiple decryption keys</li><li>Default keystore type is now JCEKS (compatible with JKS and PKCS12)</li><li>Bug fixes</li><li>Incompatible changes:</li><ul><li>SOAP Message Decrypter: Private Key Password field removed (use Credentials table instead)</li></ul></ul>",
+        "downloadUrl": "https://github.com/tilln/jmeter-wssecurity/releases/download/1.7/jmeter-wssecurity-1.7.jar",
+        "depends": [
+          "jmeter-core"
+        ],
+        "libs": {
+          "wss4j-ws-security-dom": "https://search.maven.org/remotecontent?filepath=org/apache/wss4j/wss4j-ws-security-dom/2.2.2/wss4j-ws-security-dom-2.2.2.jar",
+          "wss4j-ws-security-common": "https://search.maven.org/remotecontent?filepath=org/apache/wss4j/wss4j-ws-security-common/2.2.2/wss4j-ws-security-common-2.2.2.jar",
+          "xmlsec": "https://search.maven.org/remotecontent?filepath=org/apache/santuario/xmlsec/2.1.2/xmlsec-2.1.2.jar"
         }
       }
     }
@@ -394,6 +475,20 @@
         "depends": [
           "jmeter-core"
         ]
+      },
+      "1.2.1": {
+        "changes": "Improved websocket receive performance",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=net/luminis/jmeter/jmeter-websocket-samplers/1.2.1/jmeter-websocket-samplers-1.2.1.jar",
+        "depends": [
+          "jmeter-core"
+        ]
+      },
+      "1.2.2": {
+        "changes": "Improved memory usage for receiving binary messages",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=net/luminis/jmeter/jmeter-websocket-samplers/1.2.2/jmeter-websocket-samplers-1.2.2.jar",
+        "depends": [
+          "jmeter-core"
+        ]
       }
     }
   },
@@ -404,27 +499,102 @@
     "helpUrl": "https://github.com/delirius325/jmeter-elasticsearch-backend-listener",
     "screenshotUrl": "https://camo.githubusercontent.com/03f25b0b0323f0f42470165187af0ee8b2528428/68747470733a2f2f696d6167652e6962622e636f2f6a57364c4e782f53637265656e5f53686f745f323031385f30335f32315f61745f31305f32315f31385f414d2e706e67",
     "vendor": "Delirius325",
-    "markerClass": "io.github.delirius325.jmeter.backendlistener.elasticsearch.ElasticsearchBackend",
+    "markerClass": "io.github.delirius325.jmeter.backendlistener.elasticsearch.ElasticsearchBackendClient",
     "versions": {
-      "2.2.5": {
-        "changes": "Added request body in info/debug mode -- Forced lowercase for index creation",
-        "downloadUrl":"https://search.maven.org/remotecontent?filepath=io/github/delirius325/jmeter.backendlistener.elasticsearch/2.2.5/jmeter.backendlistener.elasticsearch-2.2.5.jar"
+      "2.4.1": {
+        "changes": "Added support for Xpack authentication",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=io/github/delirius325/jmeter.backendlistener.elasticsearch/2.4.1/jmeter.backendlistener.elasticsearch-2.4.1.jar"
       },
-      "2.3.0": {
-        "changes": "Added a new detail mode : 'error' - only send the failing samplers to ElasticSearch",
-        "downloadUrl": "https://search.maven.org/remotecontent?filepath=io/github/delirius325/jmeter.backendlistener.elasticsearch/2.3.0/jmeter.backendlistener.elasticsearch-2.3.0.jar"
+      "2.4.2": {
+        "changes": "Added string conversion to number for ElasticSearch",
+        "downloadUrl": "http://central.maven.org/maven2/io/github/delirius325/jmeter.backendlistener.elasticsearch/2.4.2/jmeter.backendlistener.elasticsearch-2.4.2.jar"
       },
-      "2.3.1": {
-        "changes": "Fixed a bug where filters wouldn't work in error mode",
-        "downloadUrl": "https://search.maven.org/remotecontent?filepath=io/github/delirius325/jmeter.backendlistener.elasticsearch/2.3.1/jmeter.backendlistener.elasticsearch-2.3.1.jar"
+      "2.4.3": {
+        "changes": "Fixed class loader problem with JavaFX StringConverter class",
+        "downloadUrl": "https://github.com/delirius325/jmeter-elasticsearch-backend-listener/releases/download/2.4.3/jmeter.backendlistener.elasticsearch-2.4.3.jar"
       },
-      "2.3.2": {
-        "changes":"Fixed a bug where ElapsedTime wouldn't be considered as a date by ES. Added the possibility to send custom fields to ElasticSearch.",
-        "downloadUrl":"https://search.maven.org/remotecontent?filepath=io/github/delirius325/jmeter.backendlistener.elasticsearch/2.3.2/jmeter.backendlistener.elasticsearch-2.3.2.jar"
+      "2.5.0": {
+        "changes": "Switched to low-level client v6.4 & added custom variables support",
+        "downloadUrl": "http://central.maven.org/maven2/io/github/delirius325/jmeter.backendlistener.elasticsearch/2.5.0/jmeter.backendlistener.elasticsearch-2.5.0.jar"
       },
-      "2.3.3": {
-        "changes":"Added injector hostname in the base ElasticSearch index",
-        "downloadUrl":"https://search.maven.org/remotecontent?filepath=io/github/delirius325/jmeter.backendlistener.elasticsearch/2.3.3/jmeter.backendlistener.elasticsearch-2.3.3.jar"
+      "2.5.1": {
+        "changes": "Added way of adding all response headers as well as request headers as ElasticSearch Index properties. (Basically JSON key/value pairs)",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=io/github/delirius325/jmeter.backendlistener.elasticsearch/2.5.1/jmeter.backendlistener.elasticsearch-2.5.1.jar"
+      },
+      "2.5.2": {
+        "changes": "Fixed error with filters",
+        "downloadUrl": "https://github.com/delirius325/jmeter-elasticsearch-backend-listener/releases/download/2.5.2/jmeter.backendlistener.elasticsearch-2.5.2.jar"
+      },
+      "2.5.3": {
+        "changes": "Fixed error with filters (#2), refactored the method.",
+        "downloadUrl": "https://github.com/delirius325/jmeter-elasticsearch-backend-listener/releases/download/2.5.3/jmeter.backendlistener.elasticsearch-2.5.3.jar"
+      },
+      "2.5.4": {
+        "changes": "Fixed error with filters (#37), refactored the method.",
+        "downloadUrl": "https://github.com/delirius325/jmeter-elasticsearch-backend-listener/releases/download/2.5.4/jmeter.backendlistener.elasticsearch-2.5.4.jar"
+      },
+      "2.6.0": {
+        "changes": "Added AWS support, added RegExp support in filters, fixed bug with header parsing",
+        "downloadUrl": "https://github.com/delirius325/jmeter-elasticsearch-backend-listener/releases/download/2.6.0/jmeter.backendlistener.elasticsearch-2.6.0.jar"
+      },
+      "2.6.1": {
+        "changes": "Fixed bug with header parsing (#40, thanks @ncasaux)",
+        "downloadUrl": "https://github.com/delirius325/jmeter-elasticsearch-backend-listener/releases/download/2.6.1/jmeter.backendlistener.elasticsearch-2.6.1.jar"
+      },
+      "2.6.5": {
+        "changes": "New SSL feature, header parsing fixes, multiple little bug fixes.",
+        "downloadUrl": "https://github.com/delirius325/jmeter-elasticsearch-backend-listener/releases/download/2.6.5/jmeter.backendlistener.elasticsearch-2.6.5.jar"
+      },
+      "2.6.6": {
+        "changes": "Fixed issue with index types ES 7.0+",
+        "downloadUrl": "https://github.com/delirius325/jmeter-elasticsearch-backend-listener/releases/download/2.6.6/jmeter.backendlistener.elasticsearch-2.6.6.jar"
+      },
+      "2.6.7": {
+        "changes": "Fixed breaking issue with getElasticSearchVersion() method",
+        "downloadUrl": "https://github.com/delirius325/jmeter-elasticsearch-backend-listener/releases/download/2.6.7/jmeter.backendlistener.elasticsearch-2.6.7.jar"
+      },
+      "2.6.8": {
+        "changes": "Fixed breaking issue with SSL conflicts",
+        "downloadUrl": "https://github.com/delirius325/jmeter-elasticsearch-backend-listener/releases/download/2.6.8/jmeter.backendlistener.elasticsearch-2.6.8.jar"
+      },
+      "2.6.9": {
+        "changes": "Fixed breaking issue with SSL conflicts",
+        "downloadUrl": "https://github.com/delirius325/jmeter-elasticsearch-backend-listener/releases/download/2.6.9/jmeter.backendlistener.elasticsearch-2.6.9.jar"
+      }
+    }
+  },
+  {
+    "id": "jmeter.pack-listener",
+    "name": "JMeter Listener pack",
+    "description": "This JMeter Plugin allows to write load test data on-the-fly to <a href=\"https://clickhouse.yandex\">ClickHouse</a> (as well as InfluxDB, ElasticSearch, with additional feature: aggregation of Samplers)<br />Explanations and usage examples on <a href=\"https://gitlab.com/testload/jmeter-listener/wikis/home\">project wiki.</a><br /> <a href=\"https://grafana.com/orgs/testload/dashboards\">Dashboards for ClickHouse.</a>",
+    "screenshotUrl": "https://gitlab.com/testload/jmeter-listener/wikis/uploads/498fd6f5a85d7ce62f5cad54f69f6ce7/Screenshot_at_May_08_14-21-40.png",
+    "helpUrl": "https://gitlab.com/testload/jmeter-listener/wikis/home",
+    "vendor": "Alexander Babaev",
+    "markerClass": "cloud.testload.jmeter.ClickHouseBackendListenerClient",
+    "versions": {
+      "1.5": {
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=cloud/testload/jmeter.pack-listener/1.5/jmeter.pack-listener-1.5.jar"
+      },
+      "1.7": {
+        "changes": "New ClickHouse table scheme jmresults(buffer)->jmresults_data(ops storage with extended data request/response)->jmresults_statistic(mat view as archive storage). New field (hostname) in stats",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=cloud/testload/jmeter.pack-listener/1.7/jmeter.pack-listener-1.7.jar"
+      }
+    }
+  },
+  {
+    "id": "jmeter.backendlistener.kafka",
+    "name": "Kafka backend listener",
+    "description": "Apache JMeter plugin for sending sample results to a Kafka server. <ul><li>Simply add a \"Backend Listener\" and change the implementation</li><li>Change the listener's configuration</li><li>To use filters, simply separate their name by a semicolon. (f1;f2;f3)</li></ul>",
+    "helpUrl": "https://github.com/rahulsinghai/jmeter-backend-listener-kafka/issues",
+    "screenshotUrl": "https://github.com/rahulsinghai/jmeter-backend-listener-kafka/blob/master/docs/configuration.JPG",
+    "vendor": "rahulsinghai",
+    "markerClass": "io.github.rahulsinghai.jmeter.backendlistener.kafka.KafkaBackendClient",
+    "versions": {
+      "1.0.0": {
+        "changes": "Initial version.",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=io/github/rahulsinghai/jmeter.backendlistener.kafka/1.0.0/jmeter.backendlistener.kafka-1.0.0.jar",
+        "depends": [
+        ]
       }
     }
   }

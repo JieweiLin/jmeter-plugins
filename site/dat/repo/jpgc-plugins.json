@@ -82,6 +82,34 @@
         "libs": {
           "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.4/jmeter-plugins-cmn-jmeter-0.4.jar"
         }
+      },
+      "2.6": {
+        "changes": "fixed start next thread loop",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-casutg/2.6/jmeter-plugins-casutg-2.6.jar",
+        "libs": {
+          "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.4/jmeter-plugins-cmn-jmeter-0.4.jar"
+        }
+      },
+      "2.7": {
+        "changes": "CPU/Mem usage optimization (by pmouawad)",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-casutg/2.7/jmeter-plugins-casutg-2.7.jar",
+        "libs": {
+          "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.4/jmeter-plugins-cmn-jmeter-0.4.jar"
+        }
+      },
+      "2.8": {
+        "changes": "Fix remote testing problems, fix ATG stopping",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-casutg/2.8/jmeter-plugins-casutg-2.8.jar",
+        "libs": {
+          "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.4/jmeter-plugins-cmn-jmeter-0.4.jar"
+        }
+      },
+      "2.9": {
+        "changes": "Support JMeter's way of prefixing threads for distributed testing",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-casutg/2.9/jmeter-plugins-casutg-2.9.jar",
+        "libs": {
+          "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.6/jmeter-plugins-cmn-jmeter-0.6.jar"
+        }
       }
     }
   },
@@ -161,7 +189,9 @@
     "markerClass": "kg.apc.jmeter.samplers.DummySampler",
     "componentClasses": [
       "kg.apc.jmeter.samplers.DummySampler",
-      "kg.apc.jmeter.samplers.DummySamplerGui"
+      "kg.apc.jmeter.samplers.DummySamplerGui",
+      "kg.apc.jmeter.modifiers.DummySubPostProcessor",
+      "kg.apc.jmeter.modifiers.DummySubPostProcessorGui"
     ],
     "versions": {
       "0.1": {
@@ -175,6 +205,20 @@
         "downloadUrl": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-dummy/0.2/jmeter-plugins-dummy-0.2.jar",
         "libs": {
           "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.4/jmeter-plugins-cmn-jmeter-0.4.jar"
+        }
+      },
+      "0.3": {
+        "changes": "Add URL and SampleResult class fields to UI, add Dummy Subsample Postprocessor",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-dummy/0.3/jmeter-plugins-dummy-0.3.jar",
+        "libs": {
+          "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.4/jmeter-plugins-cmn-jmeter-0.4.jar"
+        }
+      },
+      "0.4": {
+        "changes": "Fix serialization",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-dummy/0.4/jmeter-plugins-dummy-0.4.jar",
+        "libs": {
+          "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.6/jmeter-plugins-cmn-jmeter-0.6.jar"
         }
       }
     }
@@ -323,8 +367,8 @@
   },
   {
     "id": "jpgc-json",
-    "name": "JSON Plugins (deprecated)",
-    "description": "[Deprecated in favor of core JMeter 4.0+] Allows extracting values from JSON responses using JSONPath syntax. Also ships JSONPath Assertion.",
+    "name": "JSON/YAML Plugins (deprecated)",
+    "description": "[Deprecated in favor of core JMeter 4.0+] Allows extracting values from JSON/YAML responses using JSONPath syntax. Also ships JSONPath Assertion.",
     "screenshotUrl": "https://jmeter-plugins.org/img/wiki/JSONPathExtractor.png",
     "helpUrl": "https://jmeter-plugins.org/wiki/JSONPathExtractor/",
     "vendor": "JMeter-Plugins.org",
@@ -386,6 +430,18 @@
           "json-lib": "http://search.maven.org/remotecontent?filepath=net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar",
           "json-smart": "http://search.maven.org/remotecontent?filepath=net/minidev/json-smart/2.3/json-smart-2.3.jar",
           "asm": "http://search.maven.org/remotecontent?filepath=net/minidev/asm/1.0.2/asm-1.0.2.jar"
+        }
+      },
+      "2.7": {
+        "changes": "Added YAML path extractor and assertion",
+        "downloadUrl": "http://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-json/2.7/jmeter-plugins-json-2.7.jar",
+        "libs": {
+          "jmeter-plugins-cmn-jmeter": "http://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.4/jmeter-plugins-cmn-jmeter-0.4.jar",
+          "json-path": "http://search.maven.org/remotecontent?filepath=com/jayway/jsonpath/json-path/2.4.0/json-path-2.4.0.jar",
+          "json-lib": "http://search.maven.org/remotecontent?filepath=net/sf/json-lib/json-lib/2.4/json-lib-2.4-jdk15.jar",
+          "json-smart": "http://search.maven.org/remotecontent?filepath=net/minidev/json-smart/2.3/json-smart-2.3.jar",
+          "asm": "http://search.maven.org/remotecontent?filepath=net/minidev/asm/1.0.2/asm-1.0.2.jar",
+          "snakeyaml": "http://search.maven.org/remotecontent?filepath=org/yaml/snakeyaml/1.21/snakeyaml-1.21.jar"
         }
       }
     }
@@ -531,6 +587,18 @@
           "xom": "https://search.maven.org/remotecontent?filepath=com/io7m/xom/xom/1.2.10/xom-1.2.10.jar",
           "commons-pool": "http://search.maven.org/remotecontent?filepath=commons-pool/commons-pool/1.6/commons-pool-1.6.jar"
         }
+      },
+      "0.3": {
+        "changes": "fixed exception when RANDOM_KEEP chosen on a list",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-redis/0.3/jmeter-plugins-redis-0.3.jar",
+        "libs": {
+          "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.4/jmeter-plugins-cmn-jmeter-0.4.jar",
+          "jedis": "https://search.maven.org/remotecontent?filepath=redis/clients/jedis/2.2.1/jedis-2.2.1.jar",
+          "commons-beanutils": "https://search.maven.org/remotecontent?filepath=commons-beanutils/commons-beanutils/1.8.3/commons-beanutils-1.8.3.jar",
+          "qpid-common": "https://search.maven.org/remotecontent?filepath=org/apache/qpid/qpid-common/0.20/qpid-common-0.20.jar",
+          "xom": "https://search.maven.org/remotecontent?filepath=com/io7m/xom/xom/1.2.10/xom-1.2.10.jar",
+          "commons-pool": "http://search.maven.org/remotecontent?filepath=commons-pool/commons-pool/1.6/commons-pool-1.6.jar"
+        }
       }
     }
   },
@@ -624,6 +692,14 @@
           "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.4/jmeter-plugins-cmn-jmeter-0.4.jar",
           "jmeter-plugins-common-io": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-common-io/0.2/jmeter-plugins-common-io-0.2.jar"
         }
+      },
+      "0.4": {
+        "changes": "Fixed bind to local address/port",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-udp/0.4/jmeter-plugins-udp-0.4.jar",
+        "libs": {
+          "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.4/jmeter-plugins-cmn-jmeter-0.4.jar",
+          "jmeter-plugins-common-io": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-common-io/0.2/jmeter-plugins-common-io-0.2.jar"
+        }
       }
     }
   },
@@ -631,8 +707,8 @@
     "id": "jpgc-webdriver",
     "name": "Selenium/WebDriver Support",
     "description": "This plugin allows testing real browser behavior using Selenium/WebDriver technology",
-    "screenshotUrl": "https://jmeter-plugins.org/img/wiki/web-driver/web-driver-tutorial-web-sampler.png",
-    "helpUrl": "https://jmeter-plugins.org/wiki/WebDriverSampler/",
+    "screenshotUrl": "https://github.com/undera/jmeter-plugins-webdriver/raw/master/img/web-driver-tutorial-web-sampler.png",
+    "helpUrl": "https://github.com/undera/jmeter-plugins-webdriver",
     "vendor": "JMeter-Plugins.org",
     "markerClass": "com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler",
     "componentClasses": [
@@ -726,6 +802,58 @@
           "sac": "https://search.maven.org/remotecontent?filepath=org/w3c/css/sac/1.3/sac-1.3.jar",
           "jna": "https://search.maven.org/remotecontent?filepath=net/java/dev/jna/jna/3.5.2/jna-3.5.2.jar",
           "platform": "https://search.maven.org/remotecontent?filepath=net/java/dev/jna/platform/3.5.2/platform-3.5.2.jar",
+          "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.4/jmeter-plugins-cmn-jmeter-0.4.jar"
+        }
+      },
+      "3.0": {
+        "changes": "Upgrade Selenium library to version 3.14.0",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-webdriver/3.0/jmeter-plugins-webdriver-3.0.jar",
+        "libs": {
+          "selenium-support": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/selenium-support/3.14.0/selenium-support-3.14.0.jar",
+          "selenium-api": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/selenium-api/3.14.0/selenium-api-3.14.0.jar",
+          "selenium-java": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/selenium-java/3.14.0/selenium-java-3.14.0.jar",
+          "selenium-firefox-driver": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/selenium-firefox-driver/3.14.0/selenium-firefox-driver-3.14.0.jar",
+          "selenium-remote-driver": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/selenium-remote-driver/3.14.0/selenium-remote-driver-3.14.0.jar",
+          "selenium-ie-driver": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/selenium-ie-driver/3.14.0/selenium-ie-driver-3.14.0.jar",
+          "selenium-chrome-driver": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/selenium-chrome-driver/3.14.0/selenium-chrome-driver-3.14.0.jar",
+          "htmlunit-driver": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/htmlunit-driver/2.33.0/htmlunit-driver-2.33.0.jar",
+          "phantomjsdriver": "https://search.maven.org/remotecontent?filepath=com/codeborne/phantomjsdriver/1.4.4/phantomjsdriver-1.4.4.jar",
+          "jsyntaxpane": "https://search.maven.org/remotecontent?filepath=de/sciss/jsyntaxpane/1.0.0/jsyntaxpane-1.0.0.jar",
+          "htmlunit": "https://search.maven.org/remotecontent?filepath=net/sourceforge/htmlunit/htmlunit/2.32/htmlunit-2.32.jar",
+          "htmlunit-core-js": "https://search.maven.org/remotecontent?filepath=net/sourceforge/htmlunit/htmlunit-core-js/2.32/htmlunit-core-js-2.32.jar",
+          "htmlunit-cssparser": "https://search.maven.org/remotecontent?filepath=net/sourceforge/htmlunit/htmlunit-cssparser/1.2.0/htmlunit-cssparser-1.2.0.jar",
+          "neko-htmlunit": "https://search.maven.org/remotecontent?filepath=net/sourceforge/htmlunit/neko-htmlunit/2.32/neko-htmlunit-2.32.jar",
+          "commons-exec": "https://search.maven.org/remotecontent?filepath=org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar",
+          "byte-buddy": "https://search.maven.org/remotecontent?filepath=net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar",
+          "guava": "https://search.maven.org/remotecontent?filepath=com/google/guava/guava/25.0-jre/guava-25.0-jre.jar",
+          "okio": "https://search.maven.org/remotecontent?filepath=com/squareup/okio/okio/1.14.1/okio-1.14.1.jar",
+          "okhttp": "https://search.maven.org/remotecontent?filepath=com/squareup/okhttp3/okhttp/3.10.0/okhttp-3.10.0.jar",
+          "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.4/jmeter-plugins-cmn-jmeter-0.4.jar"
+        }
+      },
+      "3.1": {
+        "changes": "Fix htmlunit browser name",
+        "downloadUrl": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-webdriver/3.1/jmeter-plugins-webdriver-3.1.jar",
+        "libs": {
+          "selenium-support": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/selenium-support/3.14.0/selenium-support-3.14.0.jar",
+          "selenium-api": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/selenium-api/3.14.0/selenium-api-3.14.0.jar",
+          "selenium-java": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/selenium-java/3.14.0/selenium-java-3.14.0.jar",
+          "selenium-firefox-driver": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/selenium-firefox-driver/3.14.0/selenium-firefox-driver-3.14.0.jar",
+          "selenium-remote-driver": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/selenium-remote-driver/3.14.0/selenium-remote-driver-3.14.0.jar",
+          "selenium-ie-driver": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/selenium-ie-driver/3.14.0/selenium-ie-driver-3.14.0.jar",
+          "selenium-chrome-driver": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/selenium-chrome-driver/3.14.0/selenium-chrome-driver-3.14.0.jar",
+          "htmlunit-driver": "https://search.maven.org/remotecontent?filepath=org/seleniumhq/selenium/htmlunit-driver/2.33.0/htmlunit-driver-2.33.0.jar",
+          "phantomjsdriver": "https://search.maven.org/remotecontent?filepath=com/codeborne/phantomjsdriver/1.4.4/phantomjsdriver-1.4.4.jar",
+          "jsyntaxpane": "https://search.maven.org/remotecontent?filepath=de/sciss/jsyntaxpane/1.0.0/jsyntaxpane-1.0.0.jar",
+          "htmlunit": "https://search.maven.org/remotecontent?filepath=net/sourceforge/htmlunit/htmlunit/2.32/htmlunit-2.32.jar",
+          "htmlunit-core-js": "https://search.maven.org/remotecontent?filepath=net/sourceforge/htmlunit/htmlunit-core-js/2.32/htmlunit-core-js-2.32.jar",
+          "htmlunit-cssparser": "https://search.maven.org/remotecontent?filepath=net/sourceforge/htmlunit/htmlunit-cssparser/1.2.0/htmlunit-cssparser-1.2.0.jar",
+          "neko-htmlunit": "https://search.maven.org/remotecontent?filepath=net/sourceforge/htmlunit/neko-htmlunit/2.32/neko-htmlunit-2.32.jar",
+          "commons-exec": "https://search.maven.org/remotecontent?filepath=org/apache/commons/commons-exec/1.3/commons-exec-1.3.jar",
+          "byte-buddy": "https://search.maven.org/remotecontent?filepath=net/bytebuddy/byte-buddy/1.8.15/byte-buddy-1.8.15.jar",
+          "guava": "https://search.maven.org/remotecontent?filepath=com/google/guava/guava/25.0-jre/guava-25.0-jre.jar",
+          "okio": "https://search.maven.org/remotecontent?filepath=com/squareup/okio/okio/1.14.1/okio-1.14.1.jar",
+          "okhttp": "https://search.maven.org/remotecontent?filepath=com/squareup/okhttp3/okhttp/3.10.0/okhttp-3.10.0.jar",
           "jmeter-plugins-cmn-jmeter": "https://search.maven.org/remotecontent?filepath=kg/apc/jmeter-plugins-cmn-jmeter/0.4/jmeter-plugins-cmn-jmeter-0.4.jar"
         }
       }

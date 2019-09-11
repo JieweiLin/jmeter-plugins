@@ -3,12 +3,13 @@ import logging
 import os
 import re
 import subprocess
+import sys
 import tempfile
 import zipfile
 from distutils.version import StrictVersion
 
+import jsonschema
 import requests
-import sys
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 repo_dir = os.path.join(base_dir, "site", "dat", "repo")
@@ -59,7 +60,8 @@ def download_into_dir(dirname, url, dest_subpath):
     resp = requests.get(url)
     assert resp.status_code == 200
     if 'content-disposition' in resp.headers:
-        remote_filename = re.findall("filename=(.+)", resp.headers['content-disposition'])[0]
+        # handle optional quotes around filename:
+        remote_filename = re.sub('.*filename=(")?(?P<filename>.+)(?(1)"|$).*', "\g<filename>", resp.headers['content-disposition'])
     else:
         remote_filename = os.path.basename(resp.url)
 
@@ -89,13 +91,18 @@ if __name__ == "__main__":
     if not os.path.exists(dest_dir):
         os.makedirs(dest_dir)
 
+    with open("repo_schema.json") as fhd:
+        schema = json.load(fhd)
+
     plugins = []
     for repo_file in os.listdir(repo_dir):
         with open(os.path.join(repo_dir, repo_file)) as fhd:
-            plugins.extend(json.loads(fhd.read()))
+            content = json.loads(fhd.read())
+            jsonschema.validate(content, schema)
+            plugins.extend(content)
 
     if len(sys.argv) > 1:
-        logging.info("Doing no downloads")
+        logging.info("Doing no downloads, just checked JSON validity")
         sys.exit(0)
 
     # find pmgr
